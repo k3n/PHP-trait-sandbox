@@ -5,7 +5,7 @@
  */
 trait Singleton
 {
-	protected static $instance;
+    protected static $instance;
     final public static function getInstance()
     {
         return isset(static::$instance)
@@ -13,7 +13,7 @@ trait Singleton
             : static::$instance = new static;
     }
     final private function __construct()
-	{
+    {
         static::init();
     }
     protected function init() {}

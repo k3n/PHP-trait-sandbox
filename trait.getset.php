@@ -5,7 +5,10 @@
  * shallow classes like this:
  *
  * @example
- *        class foo { protected $bar; }
+ *        class foo {
+ *          use GetSet;
+ *          protected $bar;
+ *        }
  *        (new foo())->setBar(1)->getBar(); // 1
  */
 trait GetSet {

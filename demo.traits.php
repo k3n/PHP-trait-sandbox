@@ -20,12 +20,11 @@ interface iExportSchema {
 
 trait tExportSchema {
     protected $schema;
-    function ExportSchema()
-    {
+    function ExportSchema() {
         printf('export for %s: %s%s', __CLASS__, $this->getSchema(), PHP_EOL);
     }
     public function traitWho() {
-        echo __CLASS__, ' (', get_class($this), ')', PHP_EOL;
+        echo 'trait: ', __TRAIT__, ' in ', __CLASS__, ' (', get_class($this), ')', PHP_EOL;
         return $this;
     }
 }

@@ -1,11 +1,11 @@
 Just some experiments with PHP's traits.
 ========================================
 
-Traits
+Basic Traits
 ------
 ### GetSet
 
-_Automatically handles get/set methods for your class (provided you have created the class member)._
+Automatically handles get/set methods for your class _provided you have created the class member_.
 
     class foo {
         use GetSet;
@@ -13,7 +13,9 @@ _Automatically handles get/set methods for your class (provided you have created
     }
     (new foo())->setBar(1)->getBar(); // 1
 
-### Logger: _Class-specific logging within a unified directory & filename structure._
+### Logger
+
+Class-specific logging with a unified directory & filename structure.
 
     class foo {
         use Logger;
@@ -21,7 +23,9 @@ _Automatically handles get/set methods for your class (provided you have created
     (new foo())->Log('ok');         // logs "[date] ok" to ./Logger/foo/default.log
     foo::LogStatic('ok', 'test');   // logs "[date] ok" to ./Logger/foo/test.log
 
-### Singleton: _For when you absolutely, positively, can only have 1 of an object._ Maybe.
+### Singleton
+
+For when you absolutely, positively, can only have 1 of an object. _Maybe._
 
     class foo {
         use Singleton;

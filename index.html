@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Php-trait-sandbox by k3n</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Php-trait-sandbox</h1>
+<p>Abusing PHP 5.4's traits</p>
+        <p class="view"><a href="https://github.com/k3n/PHP-trait-sandbox">View the Project on GitHub <small>k3n/PHP-trait-sandbox</small></a></p>
+        <ul>
+          <li><a href="https://github.com/k3n/PHP-trait-sandbox/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/k3n/PHP-trait-sandbox/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/k3n/PHP-trait-sandbox">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Just some experiments with PHP's traits.</h1>
+
+<h2>Basic Traits</h2>
+
+<h3>GetSet</h3>
+
+<p>Automatically handles get/set methods for your class <em>provided you have created the class member</em>.</p>
+
+<pre><code>class foo {
+    use GetSet;
+    protected $bar;
+}
+(new foo())-&gt;setBar(1)-&gt;getBar(); // 1
+</code></pre>
+
+<h3>Logger</h3>
+
+<p>Class-specific logging with a unified directory &amp; filename structure.</p>
+
+<pre><code>class foo {
+    use Logger;
+}
+(new foo())-&gt;Log('ok');         // logs "[date] ok" to ./Logger/foo/default.log
+foo::LogStatic('ok', 'test');   // logs "[date] ok" to ./Logger/foo/test.log
+</code></pre>
+
+<h3>Singleton</h3>
+
+<p>For when you absolutely, positively, can only have 1 of an object. <em>Maybe.</em></p>
+
+<pre><code>class foo {
+    use Singleton;
+}
+foo::getInstance(); // now what?
+</code></pre>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/k3n">k3n</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
